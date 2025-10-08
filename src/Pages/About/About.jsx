@@ -22,14 +22,14 @@ const About = () => {
           Explore All Apps on the Market developed by us. We code for Millions
         </p>
         <div className=" md:flex  justify-between items-center text-center mt-4 p-2">
-          <p className="md:font-bold font-semibold md:text-xl ">
+          <p className="font-bold  md:text-xl mb-2 ">
             <span>({filteredData.length})</span> Apps Found
           </p>
 
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="btn"
+            className="btn md:w-[200px] w-[400px]"
             type="search"
             placeholder="search"
           />

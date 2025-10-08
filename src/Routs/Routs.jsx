@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
         <Footer />
       </>
     ),
-    hydrateFallbackElement: <p>Loading...</p>,
+    hydrateFallbackElement: <p>Lo...</p>,
     children: [
       {
         index: true,
