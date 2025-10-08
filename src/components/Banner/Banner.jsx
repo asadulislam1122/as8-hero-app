@@ -33,32 +33,32 @@ const Banner = () => {
         <img className="mt-8" src={heroPng} alt="" />
       </div>
       {/* end */}
-      <div className=" flex h-[200px] flex-col text-white btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] p-4">
-        <h1 className="font-bold md:text-3xl text-xl">
+      <div className=" flex h-[400px] md:h-[200px] flex-col text-white btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] p-4">
+        <h1 className="font-bold md:text-3xl mt-6 text-2xl">
           Trusted by Millions, Built for You
         </h1>
         <div className="mt-4">
-          <div className=" grid grid-cols-3 gap-12">
+          <div className=" grid md:grid-cols-3 grid-cols-1 gap-12">
             <div>
-              <p className="font-normal">Downloads</p>
-              <p className="md:font-extrabold md:text-4xl text-white  text-2xl">
+              <p className="font-normal">Total Downloads</p>
+              <p className="md:font-extrabold font-bold  md:text-4xl text-white  text-2xl">
                 29.6M
               </p>
               <p className="font-normal">21% more than last month</p>
             </div>
             <div>
               <p className="font-normal">Total Reviews</p>
-              <p className="md:font-extrabold md:text-4xl text-white text-2xl">
+              <p className="md:font-extrabold font-bold md:text-4xl text-white text-2xl">
                 906K
               </p>
               <p className="font-normal">46% more than last month</p>
             </div>
             <div>
               <p className="font-normal">Active Apps</p>
-              <p className="md:font-extrabold md:text-4xl text-white text-2xl">
+              <p className="md:font-extrabold font-bold md:text-4xl text-white text-2xl">
                 132+
               </p>
-              <p className="font-normal">31 more will Launch</p>
+              <p className="font-normal mb-6">31 more will Launch</p>
             </div>
           </div>
         </div>
