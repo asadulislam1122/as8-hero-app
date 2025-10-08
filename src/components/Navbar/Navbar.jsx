@@ -42,7 +42,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="btn ml-2 btn-ghost text-[20px] text-[#632EE3]">
+          <div className="btn md:ml-2 btn-ghost text-[20px] text-[#632EE3]">
             {" "}
             <img src={heroImg} alt="Hero-Img" />
             <NavLink to={"/"}>HERO.IO</NavLink>
@@ -61,7 +61,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end mr-6">
+        <div className="navbar-end md:mr-6">
           <a
             href="https://github.com/"
             className="text-white btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"

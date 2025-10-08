@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <div className="mt-4">
       <div className="flex flex-col items-center justify-center text-center">
-        <h1 className="text-[60px] font-bold">
+        <h1 className="md:text-[60px] text-[40px] font-bold">
           We Build <br /> <span className="text-[#632ee3]">Productive</span>{" "}
           Apps
         </h1>
