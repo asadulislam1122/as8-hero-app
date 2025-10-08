@@ -3,7 +3,7 @@ import dImg from "../../assets/fi_9131795.png";
 import rImg from "../../assets/fi_1828884.png";
 const HomeData = ({ data }) => {
   // console.log(data);
-  const { image, title, companyName, downloads, ratings, ratingAvg } = data;
+  const { image, title, downloads, ratingAvg } = data;
   return (
     <div className="card p-4 m-2 shadow-sm hover:scale-105 transition ease-in-out">
       <figure>

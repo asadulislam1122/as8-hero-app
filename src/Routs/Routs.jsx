@@ -6,6 +6,7 @@ import About from "../Pages/About/About";
 import Blog from "../Pages/Blog/Blog";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Root2 from "../components/Root/Root2";
+import ErrorPage2 from "../Pages/ErrorPage/ErrorPage2";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
   {
     path: "/about",
     Component: Root2,
+    errorElement: <ErrorPage2></ErrorPage2>,
     children: [{ path: "/about", Component: About }],
   },
 ]);
