@@ -7,25 +7,55 @@ import Blog from "../Pages/Blog/Blog";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Root2 from "../components/Root/Root2";
 import ErrorPage2 from "../Pages/ErrorPage/ErrorPage2";
+import AppDtails from "../Pages/AppDtails/AppDtails";
+import Root3 from "../components/Root/Root3";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: Root,
-    errorElement: <ErrorPage></ErrorPage>,
-    hydrateFallbackElement: <p>Lodding...</p>,
+    element: <Root />,
+    errorElement: (
+      <>
+        <Navbar />
+        <ErrorPage />
+        <Footer />
+      </>
+    ),
+    hydrateFallbackElement: <p>Loading...</p>,
     children: [
       {
         index: true,
         loader: () => fetch("/heroData.json"),
-        Component: Home,
+        element: <Home />,
       },
-      { path: "/blog", Component: Blog },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
     ],
   },
+
   {
     path: "/about",
     Component: Root2,
-    errorElement: <ErrorPage2></ErrorPage2>,
     children: [{ path: "/about", Component: About }],
+  },
+  {
+    path: "/appcard/:id",
+    element: <Root3 />,
+    errorElement: (
+      <>
+        <Navbar />
+        <ErrorPage2 />
+        <Footer />
+      </>
+    ),
+    children: [
+      {
+        path: "/appcard/:id",
+        element: <AppDtails />,
+      },
+    ],
   },
 ]);

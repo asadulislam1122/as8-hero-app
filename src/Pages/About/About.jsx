@@ -21,7 +21,7 @@ const About = () => {
         <p className="text-[#627382] mt-3">
           Explore All Apps on the Market developed by us. We code for Millions
         </p>
-        <div className="flex justify-between items-center text-center mt-4 p-2">
+        <div className=" md:flex  justify-between items-center text-center mt-4 p-2">
           <p className="md:font-bold font-semibold md:text-xl ">
             <span>({filteredData.length})</span> Apps Found
           </p>
