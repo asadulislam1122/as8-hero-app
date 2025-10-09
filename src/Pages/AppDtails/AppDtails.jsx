@@ -32,9 +32,13 @@ const AppDtails = () => {
   };
   return (
     <div>
-      <div className="flex gap-8 md:gap-[120px] items-center mt-4 mb-4 m-4 p-4 md:w-[1000px] mx-auto">
+      <div className="md:flex md:text-left text-center  gap-8 md:gap-[120px] items-center mt-4 mb-4 m-4 p-4 md:w-[1000px] mx-auto">
         <div>
-          <img className="rounded-2xl md:w-[280px]" src={image} alt="" />
+          <img
+            className="rounded-2xl mb-4 md:mb-0 md:w-[280px] w-[370px] mx-auto"
+            src={image}
+            alt=""
+          />
         </div>
         <div>
           <h1 className="font-bold text-2xl">{title}</h1>

@@ -8,9 +8,13 @@ const HomeData = ({ data }) => {
   // console.log(id);
   return (
     <Link to={`/appcard/${id}`}>
-      <div className="card p-4 m-2 shadow-sm hover:scale-105 transition ease-in-out">
+      <div className="card  p-4 m-2 shadow-sm hover:scale-105 transition ease-in-out">
         <figure>
-          <img className="rounded-2xl " src={image} alt="Hero Img" />
+          <img
+            className="rounded-2xl w-[200px] h-[200px] object-cover "
+            src={image}
+            alt="Hero Img"
+          />
         </figure>
         <h2 className="font-medium text-[20px] text-[#001931] text-xl ml-4 mt-4">
           {title}

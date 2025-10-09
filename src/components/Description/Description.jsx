@@ -2,7 +2,7 @@ import React from "react";
 
 const Description = () => {
   return (
-    <div className="w-[1100px] mx-auto mb-8">
+    <div className="md:w-[1100px] mx-auto mb:mb-8 m-4 p-4">
       <h1 className="font-bold text-xl mt-4 mb-4">Description</h1>
       <p className="text-gray-600 font-medium">
         This focus app takes the proven Pomodoro technique and makes it even

@@ -29,7 +29,7 @@ const About = () => {
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="btn md:w-[200px] w-[400px]"
+            className="btn md:w-[200px]"
             type="search"
             placeholder="search"
           />
