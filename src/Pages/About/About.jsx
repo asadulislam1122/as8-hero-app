@@ -4,10 +4,20 @@ import HomeData from "../Home/HomeData";
 
 const About = () => {
   const { heroData } = useHeroData();
-
   const [search, setSearch] = useState("");
-  const term = search.trim().toLowerCase();
+  const [loading, setLoading] = useState(false);
 
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setSearch(value);
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  };
+
+  const term = search.trim().toLowerCase();
   const filteredData = term
     ? heroData.filter((hero) => hero.title.toLowerCase().includes(term))
     : heroData;
@@ -28,7 +38,7 @@ const About = () => {
 
           <input
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={handleSearch}
             className="btn md:w-[200px]"
             type="search"
             placeholder="search"
@@ -37,9 +47,15 @@ const About = () => {
       </div>
 
       <div className="md:w-[1200px] mx-auto gap-4 mt-4 mb-4 grid md:grid-cols-4 grid-cols-1">
-        {noDataFound ? (
+        {loading ? (
           <div className="md:col-span-4 text-center py-10">
-            <h3 className="text-3xl font-semibold text-red-500">
+            <div className="flex justify-center items-center py-10">
+              <span className="loading loading-spinner loading-lg text-blue-500"></span>
+            </div>
+          </div>
+        ) : noDataFound ? (
+          <div className="md:col-span-4 text-center py-10">
+            <h3 className="text-3xl font-semibold text-gray-500">
               No data found!
             </h3>
             <p className="text-gray-600 mt-2">
