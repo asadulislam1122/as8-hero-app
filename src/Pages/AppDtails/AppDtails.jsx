@@ -28,7 +28,20 @@ const AppDtails = () => {
   //   console.log(id);
   const handleInstall = () => {
     setIsInstalled(true);
-    toast("🎉 App installed successfully!");
+    toast("🎉 App Installed successfully!");
+    // 2222222222222222222222222
+
+    const installData = JSON.parse(localStorage.getItem("install"));
+    let updateData = [];
+    // console.log(installData);
+    if (installData) {
+      const isDuplicate = installData.some((p) => p.id === appData.id);
+      if (isDuplicate) return toast("Already Install");
+      updateData = [...installData, appData];
+    } else {
+      updateData.push(appData);
+    }
+    localStorage.setItem("install", JSON.stringify(updateData));
   };
   return (
     <div>
@@ -40,14 +53,14 @@ const AppDtails = () => {
             alt=""
           />
         </div>
-        <div>
+        <div className="">
           <h1 className="font-bold text-2xl">{title}</h1>
           <p className="font-semibold text-[18px text-gray-600]">
             Company Name: {companyName}
           </p>
           <p className="border-b text-gray-700 mt-4"></p>
           {/* aaaaaaaaaaa */}
-          <div className="flex mt-8 gap-8">
+          <div className="flex ml-8 md:ml-0   mt-8 gap-8">
             <div className="">
               <img className="h-8" src={downloadImg} alt="download img" />
               <p className="font-semibold mt-2">download</p>
@@ -65,6 +78,9 @@ const AppDtails = () => {
               <p className="font-bold text-2xl mt-2 ">{reviews}</p>
             </div>
           </div>
+          {/* Install button */}
+          {/* Install button */}
+          {/* Install button */}
           <button
             onClick={handleInstall}
             disabled={isInstalled}

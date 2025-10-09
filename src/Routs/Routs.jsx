@@ -11,6 +11,7 @@ import AppDtails from "../Pages/AppDtails/AppDtails";
 import Root3 from "../components/Root/Root3";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import Root4 from "../components/Root/Root4";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -28,10 +29,6 @@ export const router = createBrowserRouter([
         index: true,
         loader: () => fetch("/heroData.json"),
         element: <Home />,
-      },
-      {
-        path: "/blog",
-        element: <Blog />,
       },
     ],
   },
@@ -57,5 +54,10 @@ export const router = createBrowserRouter([
         element: <AppDtails />,
       },
     ],
+  },
+  {
+    path: "/blog",
+    Component: Root4,
+    children: [{ path: "/blog", element: <Blog /> }],
   },
 ]);
