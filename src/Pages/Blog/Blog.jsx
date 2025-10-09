@@ -2,11 +2,22 @@ import React, { useEffect, useState } from "react";
 
 const Blog = () => {
   const [installData, setInstallData] = useState([]);
-
+  const [sortData, setSortData] = useState("none");
   useEffect(() => {
     const savedData = JSON.parse(localStorage.getItem("install"));
     if (savedData) setInstallData(savedData);
   }, []);
+
+  // sort
+  const sortItemData = () => {
+    if (sortData === "price-asc") {
+      return [...installData].sort((a, b) => a.downloads - b.downloads);
+    } else if (sortData === "price-dsc") {
+      return [...installData].sort((a, b) => b.downloads - a.downloads);
+    } else {
+      return installData;
+    }
+  };
 
   return (
     <div className="md:w-[1100px] mx-auto mt-8 mb-8 p-2 md:m-4 md:p-4">
@@ -17,17 +28,28 @@ const Blog = () => {
         </h1>
         <p>Explore All Trending Apps on the Market developed by us</p>
       </div>
-      <div className="flex justify-between items-center ">
+      <div className="flex  justify-between items-center mt-4 mb-4 ">
         <h2 className="font-semibold">
           <span>({installData.length})</span>Apps Found
         </h2>
-        <button className="btn">sort by</button>
+        {/* sort */}
+        <label className="mr-8">
+          <select
+            className="select select-borderd"
+            value={sortData}
+            onChange={(e) => setSortData(e.target.value)}
+          >
+            <option value="none">Sort by Price</option>
+            <option value="price-asc">Low__High</option>
+            <option value="price-dsc">High__Low</option>
+          </select>
+        </label>
       </div>
       {/* 22 */}
-      {installData.map((p) => (
+      {sortItemData().map((p) => (
         <div
           key={p.id}
-          className="flex justify-between items-center mt-8 bg-gray-300 p-4 md:m-4 rounded-2xl shadow-xl"
+          className="flex justify-between items-center mt-6 bg-gray-300 p-4 md:m-4 rounded-2xl shadow-xl"
         >
           <div className="flex gap-1 md:gap-8 p-2 items-center">
             <div>
